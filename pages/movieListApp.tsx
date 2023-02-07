@@ -73,8 +73,10 @@ const MovieListApp = (props: Props) => {
   return (
     <>
       <div
-        className="p-5 flex flex-col flex-center justify-center     
-      h-full bg-gradient-to-r from-slate-900 to-slate-900 
+        className="p-5 
+        w-full z-10 h-32 fixed -mt-28 
+        flex flex-col flex-center justify-center  
+     bg-gradient-to-r from-slate-900 to-slate-900 
 "
       >
         <label
@@ -99,10 +101,10 @@ const MovieListApp = (props: Props) => {
       </div>
 
       <div
-        className="bg-slate-900  w-full
+        className="bg-slate-900  w-full 
+        flex flex-col-reverse md:flex-row  flex-center justify-center
         h-full bg-gradient-to-r from-slate-900 to-indigo-900 
-        text-l text-white flex  font-thin
-    flex-center justify-center p-6"
+        text-l text-white  font-thin p-6 mt-28"
       >
         <div className="flex-col">
           <h2 className="text-3xl      text-indigo-200">Movie List</h2>
@@ -118,36 +120,40 @@ const MovieListApp = (props: Props) => {
                 className=" w-full rounded-md border-gray-300 pl-7 pr-12 
                 bg-gradient-to-r to-opacity-70  from-slate-900
                 mix-blend-normal hover:mix-blend-screen 
-                flex flex-row
+                flex flex-row items-center
                 focus:border-indigo-500 focus:ring-indigo-500 sm:text-xl p-3 m-2"
               >
-                
-                  { (movie?.Poster) ?
+                {movie?.Poster ? (
                   <picture>
-                  <img
-                    className="w-24 h-24 md:w-28 md:h-auto   
+                    <img
+                      className=" max-w-2xl max-h-72 w-28 h-auto   
                           rounded-none  mx-auto "
-                    src={movie?.Poster}
-                    alt=""
-                    width="384"
-                    height="512"
-                  />  </picture>: []
-                  }
-               
+                      src={movie?.Poster}
+                      alt=""
+                      width="384"
+                      height="512"
+                    />{" "}
+                  </picture>
+                ) : (
+                  []
+                )}
 
-                <div className="p-5">
-                  <span className="font-normal text-indigo-100">
-                    {movie?.Title}{" "}
-                  </span>
-                  <div>{movie?.Year}</div>
+                <div className="p-5 flex flex-col ">
+                  <div>
+                    <span className="font-normal text-indigo-100 text-base">
+                      {movie?.Title}{" "}
+                    </span>
+                    <div className="text-base">{movie?.Year}</div>
+                  </div>
                   <button
-                    className="bg-indigo-900 
-                   hover:bg-indigo-800 p-3 rounded-lg mx-auto"
+                    className="bg-indigo-900  text-base font-normal 
+                   hover:bg-indigo-800 p-3 rounded-lg mx-0 w-24 "
                     onClick={() => addToFavorites(movie)}
                   >
                     Add to Favorites
                   </button>
                 </div>
+                
               </div>
             ))}
           </div>
@@ -172,18 +178,18 @@ const MovieListApp = (props: Props) => {
                   >
                     <div key={favorite?.imdbID}>
                       <figure
-                        className="md:flex bg-slate-900 
+                        className="flex bg-slate-900 
                       bg-gradient-to-r from-indigo-900  to-slate-900
                       mix-blend-normal hover:mix-blend-screen 
 
-                     text-white rounded-2xl  rounded-br-none p-8 md:p-0 dark:bg-slate-800"
+                     text-white rounded-2xl  rounded-br-none p-0 dark:bg-slate-800"
                       >
                         <picture className="width: 12rem">
                           <source srcSet={favorite?.Poster} type="image/avif" />
                           <source srcSet={favorite?.Poster} type="image/webp" />
                           <img
-                            className="w-24 h-24 md:w-48 md:h-auto 
-                            md:rounded-tl-2xl  
+                            className="w-24 max-h-72 md:w-48 md:h-auto 
+                            rounded-tl-2xl  
                             rounded-br-none  mx-auto"
                             src={favorite?.Poster}
                             alt=""
@@ -204,7 +210,8 @@ const MovieListApp = (props: Props) => {
                       </figure>
 
                       <button
-                        className="bg-red-900 hover:bg-red-800 text-white p-2 m-5 ml-5 rounded-lg mx-auto"
+                        className="bg-red-900 hover:bg-red-800 text-base font-normal
+                         text-white p-2 m-5 ml-5 rounded-lg mx-auto"
                         onClick={() => removeFromFavories(favorite?.imdbID)}
                       >
                         Remove from Favorites
