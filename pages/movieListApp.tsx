@@ -172,8 +172,8 @@ const MovieListApp = (props: Props) => {
                 {favorite.Title ? (
                   <div
                     className="bg-gray-900 
-                  rounded-2xl  opacity-90 font-light text-xl 
-                  flex flex-col text-l p-0 m-4
+                  rounded-2xl  opacity-90 font-light 
+                  flex flex-col text-base md:text-l p-0 m-4
                   "
                   >
                     <div key={favorite?.imdbID}>
@@ -188,7 +188,8 @@ const MovieListApp = (props: Props) => {
                           <source srcSet={favorite?.Poster} type="image/avif" />
                           <source srcSet={favorite?.Poster} type="image/webp" />
                           <img
-                            className="w-24 max-h-72 md:w-48 md:h-auto 
+                            className="
+                            max-w-2xl max-h-72 w-28 h-auto  md:min-w-min md:max-w-max
                             rounded-tl-2xl  
                             rounded-br-none  mx-auto"
                             src={favorite?.Poster}
@@ -200,7 +201,9 @@ const MovieListApp = (props: Props) => {
 
                         <div className="m-5">
                           <div
-                            className="font-medium      
+                            className="
+                            
+                            font-medium      
                         text-indigo-100"
                           >
                             {favorite?.Title}
