@@ -16,6 +16,9 @@ type Props = {
 
 function MovieFavorites(props: Props) {
   const { favorites, setFavorites, placeHolder, setPlaceHolder } = props;
+  const posterHolderElement = (
+    <FilmIcon className="h-48 w-48 flex items-center text-slate-800 mix-blend-screen opacity-40" />
+  );
 
   const placeHolderElement = () => {
     return (
@@ -43,34 +46,39 @@ function MovieFavorites(props: Props) {
         {favorites?.map((favorite: any) => (
           <>
             {favorite.Title ? (
-              <div key={favorite?.imdbID}
+              <div
+                key={favorite?.imdbID}
                 className="bg-gray-900 
                   rounded-2xl  opacity-90 font-light 
                   flex flex-col text-base md:text-l p-0 m-4
                   "
               >
-                <div >
+                <div>
                   <figure
                     className="flex bg-slate-900 
                       bg-gradient-to-r from-indigo-900  to-slate-900
                       mix-blend-normal hover:mix-blend-screen 
 
-                     text-white rounded-2xl  rounded-br-none p-0 dark:bg-slate-800"
+                     text-white rounded-2xl  rounded-b-none p-0 dark:bg-slate-800"
                   >
-                    <picture className="width: 12rem">
-                      <source srcSet={favorite?.Poster} type="image/avif" />
-                      <source srcSet={favorite?.Poster} type="image/webp" />
-                      <img
-                        className="
+                    {favorite?.Poster !== "N/A" ? (
+                      <picture className="width: 12rem">
+                        <source srcSet={favorite?.Poster} type="image/avif" />
+                        <source srcSet={favorite?.Poster} type="image/webp" />
+                        <img
+                          className="
                             max-w-2xl max-h-72 w-28 h-auto  md:min-w-min md:max-w-max
                             rounded-tl-2xl  
-                            rounded-br-none  mx-auto"
-                        src={favorite?.Poster}
-                        alt=""
-                        width="384"
-                        height="512"
-                      />
-                    </picture>
+                            rounded-b-none  mx-auto"
+                          src={favorite?.Poster}
+                          alt=""
+                          width="384"
+                          height="512"
+                        />
+                      </picture>
+                    ) : (
+                      posterHolderElement
+                    )}
 
                     <div className="m-5">
                       <div
@@ -103,10 +111,7 @@ function MovieFavorites(props: Props) {
                 </div>
               </div>
             ) : (
-              <>
-                {favorite.Title == ""
-                  ? placeHolder : [] }
-              </>
+              <>{favorite.Title == "" ? placeHolder : []}</>
             )}
           </>
         ))}

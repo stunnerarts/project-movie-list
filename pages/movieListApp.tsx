@@ -56,10 +56,9 @@ const MovieListApp = (props: Props) => {
 
       <div
         className=" bg-slate-900  w-full 
-    flex flex-col-reverse md:flex-row  flex-center justify-evenly
-
-    h-full bg-gradient-to-r from-slate-900 to-indigo-900 
-    text-l text-white  font-thin p-6 mt-28"
+        flex flex-col-reverse md:flex-row flex-center justify-evenly
+        h-full bg-gradient-to-r from-slate-900 to-indigo-900 
+        text-l text-white  font-thin p-6 mt-28"
       >
         <MovieSearchResults
           searchTerm={searchTerm}

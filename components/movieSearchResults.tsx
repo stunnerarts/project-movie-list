@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   HeartIcon,
-  TrashIcon,
-  XCircleIcon,
+
   FilmIcon,
 } from "@heroicons/react/24/solid";
 import axios from "axios";
@@ -16,12 +15,10 @@ type Props = {
 
 function MovieSearchResults(props: Props) {
   const { searchTerm, addToFavorites, setPlaceHolder } = props;
-  
-  const placeHolderElement = () => {
-    return (
-      <FilmIcon className="h-24 w-24 flex items-center text-slate-800 mix-blend-screen opacity-40" />
-    );
-  };
+
+  const posterHolderElement = (
+    <FilmIcon className="h-24 w-24 flex items-center text-slate-800 mix-blend-screen opacity-40" />
+  );
 
   const [movies, setMovies] = useState([
     {
@@ -54,7 +51,6 @@ function MovieSearchResults(props: Props) {
     fetchData();
   }, [searchTerm]);
 
-  
   return (
     <div className="movie-search-results flex-col">
       <h2 className="text-3xl      text-indigo-200">Movie List</h2>
@@ -70,7 +66,7 @@ function MovieSearchResults(props: Props) {
             flex flex-row items-center
             focus:border-indigo-500 focus:ring-indigo-500 sm:text-xl p-3 m-2"
           >
-            {movie?.Poster ? (
+            {movie?.Poster !== "N/A" ? (
               <picture>
                 <img
                   className=" max-w-2xl max-h-72 w-28 h-auto   
@@ -82,7 +78,7 @@ function MovieSearchResults(props: Props) {
                 />{" "}
               </picture>
             ) : (
-              []
+              posterHolderElement
             )}
 
             <div className="p-5 flex flex-col ">
