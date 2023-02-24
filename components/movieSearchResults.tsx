@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import {
   HeartIcon,
-
   FilmIcon,
 } from "@heroicons/react/24/solid";
+import { motion } from "framer-motion"
+
 import axios from "axios";
 
 type Props = {
@@ -63,7 +64,7 @@ function MovieSearchResults(props: Props) {
             className=" w-full rounded-md border-gray-300 pl-7 pr-12 
             bg-gradient-to-r to-opacity-70  from-slate-900
             mix-blend-normal hover:mix-blend-screen 
-            flex flex-row items-center
+            flex flex-row max-[280px]:flex-col items-center
             focus:border-indigo-500 focus:ring-indigo-500 sm:text-xl p-3 m-2"
           >
             {movie?.Poster !== "N/A" ? (
@@ -88,21 +89,27 @@ function MovieSearchResults(props: Props) {
                 </span>
                 <div className="text-base">{movie?.Year}</div>
               </div>
-              <button
+              <motion.button 
+              initial={{scale:0.9}}
+              whileHover={{ scale: 1 }}
+              whileTap={{ scale: 0.9 }}
                 className="bg-indigo-900  
                 bg-gradient-to-r from-indigo-800 to-indigo-900 opacity-90
                 text-base font-normal flex flex-col items-center
                hover:bg-gradient-to-l hover:from-indigo-500 hover:to-indigo-600 hover:opacity-100 
-               p-3 rounded-lg mx-0 w-24 "
+               p-3 rounded-lg mx-0 w-24 
+               active:bg-red-900 focus:outline-none 
+               focus:ring-2 focus:ring-indigo-900 focus:ring-opacity-80
+               "
                 onClick={() => addToFavorites(movie)}
               >
                 <HeartIcon
                   className="h-6 w-6  text-slate-300 opacity-50
-                mix-blend-color-dodge
+                mix-blend-color-dodge 
                    pl-0 pr-0"
                 />
                 <span>Add to Favorites</span>
-              </button>
+              </motion.button >
             </div>
           </div>
         ))}

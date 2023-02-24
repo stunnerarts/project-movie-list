@@ -55,9 +55,11 @@ const MovieListApp = (props: Props) => {
       <MovieSearchBar searchTerm={searchTerm} handleSearch={handleSearch} />
 
       <div
-        className=" bg-slate-900  w-full 
-        flex flex-col-reverse md:flex-row flex-center justify-evenly
-        h-full bg-gradient-to-r from-slate-900 to-indigo-900 
+        className=" bg-slate-900  w-full  h-full 
+        flex flex-col-reverse 
+        min-[280px]:flex-col min-[280px]:flex-warp 
+        md:flex-row flex-center justify-evenly
+       bg-gradient-to-r from-slate-900 to-indigo-900 
         text-l text-white  font-thin p-6 mt-28"
       >
         <MovieSearchResults

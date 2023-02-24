@@ -8,7 +8,7 @@ const MovieSearchBar = (props: Props) => {
   return (
     <div
       className="p-5 
-    w-full z-10 h-32 fixed -mt-28 
+    w-full z-10 h-32 fixed -mt-0 
     flex flex-col flex-center justify-center  
  bg-gradient-to-r from-slate-900 to-slate-900 
 "
