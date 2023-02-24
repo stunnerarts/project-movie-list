@@ -13,7 +13,7 @@ import MovieFavorites from "@/components/movieFavorites";
 type Props = {};
 
 const MovieListApp = (props: Props) => {
-  const [searchTerm, setSearchTerm] = useState("black panther");
+  const [searchTerm, setSearchTerm] = useState("Star Wars");
 
   const [favorites, setFavorites] = useState([
     {
