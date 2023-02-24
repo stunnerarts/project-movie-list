@@ -63,6 +63,8 @@ function FavoritesMovieCardWidget(props: Props) {
                       className="
                           max-w-2xl max-h-72 w-28 h-auto  md:min-w-min md:max-w-max
                           rounded-tl-2xl  
+                          aspect-[3/2]
+                          object-contain
                           rounded-b-none  mx-auto"
                       src={favorite?.Poster}
                       alt=""
