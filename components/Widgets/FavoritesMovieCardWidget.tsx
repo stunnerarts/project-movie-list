@@ -67,6 +67,7 @@ function FavoritesMovieCardWidget(props: Props) {
                     />
                   </picture>
                 </span>
+                <div className="posterTitleContainer flex">
                 {favorite?.Poster !== "N/A" ? (
                   <picture className="width: 12rem">
                     <source srcSet={favorite?.Poster} type="image/avif" />
@@ -97,6 +98,7 @@ function FavoritesMovieCardWidget(props: Props) {
                     {favorite?.Title}
                   </div>
                   <div>{favorite?.Year}</div>
+                </div>
                 </div>
               </figure>
 
