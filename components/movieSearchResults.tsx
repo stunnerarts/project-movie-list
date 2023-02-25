@@ -135,7 +135,8 @@ function MovieSearchResults(props: Props) {
       <h2 className="text-3xl      text-indigo-200">Movie List</h2>
       <h4 className="text-xl"> Search Results for {`"` + searchTerm + `"`} </h4>
 
-      <div className="text-white">
+      <div className="text-white 
+      overflow-scroll h-screen">
         {movies?.map((movie) => (
           <div
             key={movie?.imdbID}
