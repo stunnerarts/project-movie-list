@@ -26,15 +26,16 @@ const SortList = (props: Props) => {
   });
 
   return (
-    <div>
+    <div className="drop-shadow-sm">
       <SortButton onSortChange={handleSortChange} />
-      <div className="mt-6 grid grid-cols-1 gap-1 
+      <div className=" grid grid-cols-1 gap-1 
       md:grid-cols-1 md:gap-1 
       lg:grid-cols-1 lg:gap-1
       xl:grid-cols-2 xl:gap-2
       2xl:grid-cols-2 2xl:gap-2
       min-[1800px]:grid-cols-3 min-[1800px]:gap-3
-      min-[2300px]:grid-cols-4 min-[2300px]:gap-4">
+      min-[2300px]:grid-cols-4 min-[2300px]:gap-4
+       overflow-scroll h-screen">
         {sortedLists?.map((sortableList: any) =>
           sortableList?.imdbID ? (
             <div key={sortableList?.imdbID}>

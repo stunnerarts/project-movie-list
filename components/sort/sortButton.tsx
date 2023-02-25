@@ -11,7 +11,7 @@ function SortButton(props: Props) {
       onSortChange(sortOrder);
     };
   return (
-    <div className="flex justify-end mt-6">
+    <div className="flex justify-end mt-6 shadow-lg pb-5">
       <button
         className="rounded-lg 
         bg-indigo-900 hover:bg-indigo-800 
