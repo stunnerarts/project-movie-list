@@ -33,8 +33,10 @@ const SortList = (props: Props) => {
       lg:grid-cols-1 lg:gap-1
       xl:grid-cols-2 xl:gap-2
       2xl:grid-cols-2 2xl:gap-2
-      min-[1800px]:grid-cols-3 min-[1800px]:gap-3
-      min-[2300px]:grid-cols-4 min-[2300px]:gap-4
+      min-[1800px]:grid-cols-3 min-[1800px]:gap-2
+      min-[2300px]:grid-cols-4 min-[2300px]:gap-2
+      min-[2500px]:grid-cols-5 min-[2500px]:gap-2
+
        overflow-scroll h-screen">
         {sortedLists?.map((sortableList: any) =>
           sortableList?.imdbID ? (
