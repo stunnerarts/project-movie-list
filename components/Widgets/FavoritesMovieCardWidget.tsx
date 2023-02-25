@@ -45,6 +45,7 @@ function FavoritesMovieCardWidget(props: Props) {
             className="bg-gray-900 
                 rounded-2xl  opacity-90 font-light 
                 flex flex-col text-base md:text-l p-0 m-4
+                shadow-2xl relative
                 "
           >
             <div>
@@ -55,7 +56,8 @@ function FavoritesMovieCardWidget(props: Props) {
                     md:flex-wrap
                    text-white rounded-2xl  rounded-b-none p-0 dark:bg-slate-800"
               >
-                <span className="imageBackdropContainer w-fit h-fit overflow-screen  mix-blend-luminosity 
+                <span className="imageBackdropContainer w-fit h-fit 
+                overflow-screen  mix-blend-luminosity 
                 absolute opacity-10">
                   <picture>
                     <img
@@ -74,7 +76,7 @@ function FavoritesMovieCardWidget(props: Props) {
                           max-w-2xl max-h-72 w-28 h-auto  md:min-w-min md:max-w-max
                           rounded-tl-2xl  
                            object-contain
-                          rounded-b-none  mx-auto"
+                          rounded-b-none  mx-auto "
                       src={favorite?.Poster}
                       alt=""
                       width="384"
@@ -99,7 +101,7 @@ function FavoritesMovieCardWidget(props: Props) {
               </figure>
 
               <button
-                className="bg-red-900
+                className="bg-red-900 relative z-1
                        bg-gradient-to-r from-red-800  to-red-900
                        hover:bg-gradient-to-b hover:from-red-600 hover:to-red-700 hover:opacity-100
                        text-base font-normal items-end
