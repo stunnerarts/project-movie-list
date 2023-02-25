@@ -13,8 +13,9 @@ function SortButton(props: Props) {
   return (
     <div className="flex justify-end mt-6 shadow-lg pb-5">
       <button
-        className="rounded-lg 
-        bg-indigo-900 hover:bg-indigo-800 
+        className="rounded-lg shadow-md
+         bg-gradient-to-r from-indigo-900 to-indigo-800 
+         hover:from-indigo-800 
         text-gray-300 hover:text-white font-medium 
         py-2 px-4"
         onClick={handleSortChange}

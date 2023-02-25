@@ -132,8 +132,8 @@ function MovieSearchResults(props: Props) {
 
   return (
     <div className="movie-search-results flex-col">
-      <h2 className="text-3xl      text-indigo-200">Movie List</h2>
-      <h4 className="text-xl"> Search Results for {`"` + searchTerm + `"`} </h4>
+      <h2 className="text-3xl text-indigo-200">Movie List</h2>
+      <h4 className="text-xl p-7 shadow-lg text-indigo-300"> Search Results for {`"` + searchTerm + `"`} </h4>
 
       <div className="text-white 
       overflow-scroll h-screen">
