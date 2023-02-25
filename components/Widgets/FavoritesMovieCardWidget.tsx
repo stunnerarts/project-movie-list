@@ -1,7 +1,7 @@
 import React from "react";
 import { TrashIcon, HeartIcon, FilmIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import { useScroll } from "framer-motion"
+import { useScroll } from "framer-motion";
 type Props = {
   favorites: any;
   favorite: any;
@@ -37,10 +37,10 @@ function FavoritesMovieCardWidget(props: Props) {
       {/* {favorites?.map((favorite: any) => ( */}
       <>
         {favorite.Title ? (
-          <motion.div 
-          initial={{scale:0.9}}
-          whileHover={{ scale: 1 }}
-          whileTap={{ scale: 0.9 }}
+          <motion.div
+            initial={{ scale: 0.9 }}
+            whileHover={{ scale: 1 }}
+            whileTap={{ scale: 0.9 }}
             key={favorite?.imdbID}
             className="bg-gray-900 
                 rounded-2xl  opacity-90 font-light 
@@ -55,6 +55,16 @@ function FavoritesMovieCardWidget(props: Props) {
                     md:flex-wrap
                    text-white rounded-2xl  rounded-b-none p-0 dark:bg-slate-800"
               >
+                <span className="imageBackdropContainer w-fit h-fit overflow-screen  mix-blend-luminosity 
+                absolute opacity-10">
+                  <picture>
+                    <img
+                      className="imageFader w-fit h-auto mix-blend-multiply"
+                      src={favorite?.Poster}
+                      alt=""
+                    />
+                  </picture>
+                </span>
                 {favorite?.Poster !== "N/A" ? (
                   <picture className="width: 12rem">
                     <source srcSet={favorite?.Poster} type="image/avif" />
@@ -63,7 +73,7 @@ function FavoritesMovieCardWidget(props: Props) {
                       className="
                           max-w-2xl max-h-72 w-28 h-auto  md:min-w-min md:max-w-max
                           rounded-tl-2xl  
-                          aspect-[3/2] object-contain
+                           object-contain
                           rounded-b-none  mx-auto"
                       src={favorite?.Poster}
                       alt=""
@@ -104,7 +114,7 @@ function FavoritesMovieCardWidget(props: Props) {
                 <span>Remove from Favorites</span>
               </button>
             </div>
-          </motion.div >
+          </motion.div>
         ) : (
           <>{favorite.Title == "" ? placeHolder : []}</>
         )}
