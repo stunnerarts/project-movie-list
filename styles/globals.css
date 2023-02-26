@@ -76,5 +76,5 @@ span.imageBackdropContainer {
   width: calc(100vw - 93px);
 }
 .searchBarContainer {
-  width: calc(100vw - 10px);
+  width: calc(100vw - 0px);
 }
