@@ -14,7 +14,7 @@ export default function Home() {
       <div className='flex flex-col h-screen justify-between
       bg-gradient-to-r from-slate-900 to-indigo-900'>
       <aside className='flex flex-col fixed h-screen  justify-center'>
-        <SideMenu />
+        {/* <SideMenu /> */}
       </aside>
       <header className="h-100"> 
       <Head>
@@ -24,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       </header>
-      <main className="mb-auto h-auto ml-16">
+      <main className="mb-auto h-auto ">
         <MovieListApp/>
       </main>
     
