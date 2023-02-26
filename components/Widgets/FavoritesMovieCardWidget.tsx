@@ -46,8 +46,7 @@ function FavoritesMovieCardWidget(props: Props) {
                 rounded-2xl  opacity-90 font-light 
                 flex flex-col text-base md:text-l p-0 m-4
                 shadow-2xl relative
-                "
-          >
+                ">
             <div>
               <figure
                 className="flex bg-slate-900 
@@ -97,7 +96,7 @@ function FavoritesMovieCardWidget(props: Props) {
                   >
                     {favorite?.Title}
                   </div>
-                  <div>{favorite?.Year}</div>
+                  <div className="text-indigo-300 font-medium">{favorite?.Year}</div>
                 </div>
                 </div>
               </figure>

@@ -8,7 +8,7 @@ type Props = {title: string}
 function Footer(props: Props) {
     const {title} = (props)
   return (
-    <footer  className="p-5 
+    <footer  className="p-5 mt-12
     w-full   h-full
     flex flex-col flex-center justify-center  
  bg-gradient-to-r from-slate-900 to-slate-900 

@@ -10,8 +10,9 @@ const MovieSearchBar = (props: Props) => {
       className="p-5 
     w-full z-10 h-32 fixed -mt-0 
     flex flex-col flex-center justify-center  
- bg-gradient-to-r from-slate-900 to-slate-900 
-"
+    bg-gradient-to-r from-slate-900 to-slate-900 
+    pr-4
+    searchBarContainer"
     >
       <label
         htmlFor="Search Movies by Title"

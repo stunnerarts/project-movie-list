@@ -66,3 +66,15 @@ span.imageBackdropContainer {
   border-radius: 16px;
   justify-content: flex-end;
 }
+
+.movieAppContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.sortContainer, .searchResultsContainer, .searchListContainer {
+  width: calc(100vw - 93px);
+}
+.searchBarContainer {
+  width: calc(100vw - 70px);
+}
