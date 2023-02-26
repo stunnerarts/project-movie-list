@@ -73,7 +73,8 @@ span.imageBackdropContainer {
 }
 
 .sortContainer, .searchResultsContainer, .searchListContainer {
-  width: calc(100vw - 93px);
+  /* width: calc(100vw - 93px); */
+  width: calc(100vw - 0px);
 }
 .searchBarContainer {
   width: calc(100vw - 0px);
